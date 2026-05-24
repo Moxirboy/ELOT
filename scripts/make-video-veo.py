@@ -55,7 +55,7 @@ PROJECT = os.environ.get("GCP_PROJECT") or subprocess.check_output(
     ["gcloud", "config", "get-value", "project"], text=True
 ).strip()
 LOCATION = os.environ.get("VEO_LOCATION", "us-central1")
-MODEL = os.environ.get("VEO_MODEL", "veo-2.0-generate-001")
+MODEL = os.environ.get("VEO_MODEL", "veo-3.1-generate-001")
 DURATION = int(os.environ.get("VEO_DURATION", "6"))
 ASPECT = os.environ.get("VEO_ASPECT", "16:9")
 TTS_VOICE = os.environ.get("TTS_VOICE", "Daniel")
@@ -206,6 +206,10 @@ def submit_veo(scene: Scene) -> str:
             "durationSeconds": DURATION,
             "sampleCount": 1,
             "personGeneration": "allow_adult",
+            # Veo 3+ generates audio by default. We're laying our own
+            # voiceover on top in the mux step, so disabling audio here
+            # both saves cost and avoids competing tracks.
+            "generateAudio": False,
         },
     }
     resp = post_json(f"{base_url()}:predictLongRunning", body)

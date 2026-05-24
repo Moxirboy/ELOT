@@ -23,7 +23,7 @@ Prefer video? Grab [`artifacts/demo/elot-demo.webm`](artifacts/demo/elot-demo.we
 **Full narrated walkthrough** (~3½ min, voiceover + Ken Burns on every screen):
 [`artifacts/video/elot-final.mp4`](artifacts/video/elot-final.mp4).
 
-**Short cinematic cut** (~37 s, Vertex AI Veo image-to-video on the 6 key surfaces, narrated):
+**Short cinematic cut** (~37 s, Vertex AI **Veo 3.1** image-to-video on the 6 key surfaces, narrated):
 [`artifacts/video/elot-veo.mp4`](artifacts/video/elot-veo.mp4).
 
 > Want to re-record the demo or re-render the narrated video?
