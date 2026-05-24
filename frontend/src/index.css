@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Subtle radial backdrop for hero / login panels */
+.bg-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-hero {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(99, 102, 241, 0.18) 0%, transparent 70%),
+    radial-gradient(40% 40% at 90% 10%, rgba(168, 85, 247, 0.18) 0%, transparent 70%),
+    radial-gradient(50% 50% at 0% 100%, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.45);
+}
+
+/* Global a11y focus rings — visible only when navigating by keyboard */
+:where(button, [role="button"], a, input, select, textarea, summary):focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.7);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Respect reduced motion preference for narration / typewriter animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+/* Print styles — used by the certificate page's "Print" button. */
+@media print {
+  body {
+    background: white;
+  }
+  /* Hide app chrome and only show the certificate body. */
+  header,
+  nav,
+  aside,
+  .no-print,
+  button {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
