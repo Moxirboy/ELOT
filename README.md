@@ -20,9 +20,12 @@ The full ~50-second walkthrough goes all the way through Learner → Buddy → I
 
 Prefer video? Grab [`artifacts/demo/elot-demo.webm`](artifacts/demo/elot-demo.webm) for the 1280×720 source recording.
 
-> Want to re-record the demo against your local stack? See
-> [`artifacts/demo/README.md`](artifacts/demo/README.md) — it's automated end-to-end
-> with Playwright + ffmpeg (`cd frontend && npm run demo:all`).
+**Full narrated walkthrough** (~3½ min, voiceover + Ken Burns on every screen):
+[`artifacts/video/elot-final.mp4`](artifacts/video/elot-final.mp4).
+
+> Want to re-record the demo or re-render the narrated video?
+> - Playwright demo + GIFs: see [`artifacts/demo/README.md`](artifacts/demo/README.md) (`cd frontend && npm run demo:all`).
+> - TTS-narrated video (Google Cloud TTS *or* macOS `say`): see [`artifacts/video/README.md`](artifacts/video/README.md) (`bash scripts/make-video.sh`).
 
 ---
 
