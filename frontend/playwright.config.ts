@@ -2,8 +2,13 @@
  * Playwright config for ELOT AI demo recording.
  *
  * Single project, headed Chromium, locked to a 1280×720 viewport (good for
- * GIF). Video recording is forced on every run, so a single test produces
- * exactly one .webm in artifacts/demo/.
+ * GIF). Video recording is forced on every run.
+ *
+ * IMPORTANT: outputDir is a *sibling* of artifacts/demo (not artifacts/demo
+ * itself). Playwright wipes outputDir at the start of every run, so pointing
+ * it at artifacts/demo would delete the committed elot-demo.webm/.gif files
+ * every time anyone ran a test. The demo spec copies the final video into
+ * artifacts/demo/elot-demo.webm via page.video().saveAs() after the run.
  */
 import { defineConfig, devices } from "@playwright/test";
 import path from "node:path";
@@ -12,11 +17,11 @@ import { fileURLToPath } from "node:url";
 // `__dirname` isn't defined in ESM; derive it from import.meta.url so this
 // config works under `"type": "module"`.
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUTPUT_DIR = path.resolve(__dirname, "../artifacts/demo");
+const TEST_RESULTS_DIR = path.resolve(__dirname, "../artifacts/test-results");
 
 export default defineConfig({
   testDir: "./tests/demo",
-  outputDir: OUTPUT_DIR,
+  outputDir: TEST_RESULTS_DIR,
   fullyParallel: false,
   retries: 0,
   workers: 1,

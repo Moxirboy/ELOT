@@ -21,10 +21,11 @@ frontend/.env.local
 frontend/.vite
 frontend/*.tsbuildinfo
 
-# Playwright run-state + temp test-results dirs (the *.webm + *.gif under
-# artifacts/demo/ are intentionally committed; the rest is regenerated.)
+# Playwright transient output. The *.webm + *.gif under artifacts/demo/ are
+# intentionally committed (README references them); everything else under
+# artifacts/test-results/ is regenerated on every run.
+artifacts/test-results/
 artifacts/demo/.last-run.json
-artifacts/demo/elot-demo-ELOT-AI-*/
 
 # Local agent / IDE config
 .claude/
