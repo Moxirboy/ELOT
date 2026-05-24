@@ -8,6 +8,24 @@ ELOT AI takes any internal policy (security, data, HR, AI usage…) and turns it
 
 ---
 
+## Watch the demo
+
+A 12-second teaser of the full product loop — login → HR Onboarding-OS dashboard → instance detail → learner timeline:
+
+![ELOT AI — 12-second teaser](artifacts/demo/elot-demo-short.gif)
+
+The full ~50-second walkthrough goes all the way through Learner → Buddy → IT dashboards and back to the landing page:
+
+![ELOT AI — full product demo](artifacts/demo/elot-demo.gif)
+
+Prefer video? Grab [`artifacts/demo/elot-demo.webm`](artifacts/demo/elot-demo.webm) for the 1280×720 source recording.
+
+> Want to re-record the demo against your local stack? See
+> [`artifacts/demo/README.md`](artifacts/demo/README.md) — it's automated end-to-end
+> with Playwright + ffmpeg (`cd frontend && npm run demo:all`).
+
+---
+
 ## Hackathon track
 
 **Corporate Education** — modern LMS / compliance training reimagined with AI.
